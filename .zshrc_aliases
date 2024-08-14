@@ -1,0 +1,64 @@
+## System and Package Management
+alias up="nix flake update --flake ~/.config/home-manager"  # Update Nix flake for home-manager
+alias hm="NIXPKGS_ALLOW_UNFREE=1 home-manager switch --impure"  # Switch home-manager configuration with unfree packages allowed
+alias apt-get="sudo apt-get"  # Run apt-get with sudo privileges
+alias update="sudo apt-get update && sudo apt-get upgrade"  # Update and upgrade system packages
+alias clean="sudo apt-get autoremove && sudo apt-get autoclean"  # Remove unnecessary packages and clean package cache
+
+## Navigation and Directory Management
+alias cd="z"  # Use 'z' command for smart directory navigation
+alias ..="cd .."  # Move up one directory
+alias ...="cd ../../../"  # Move up three directories
+alias ....="cd ../../../../"  # Move up four directories
+alias .....="cd ../../../../"  # Move up four directories (duplicate of ....)
+alias .4="cd ../../../../"  # Move up four directories (duplicate of ....)
+alias .5="cd ../../../../.."  # Move up five directories
+alias mkdir="mkdir -pv"  # Create directory with parent directories as needed and verbose output
+
+## File Listing and Viewing
+alias ls="lsd -la"  # List directory contents with lsd, including hidden files
+alias ls-d="lsd -latr"  # List directory contents sorted by modification time, reverse order
+alias ls-s="lsd -laSr"  # List directory contents sorted by file size, reverse order
+alias ls-t="lsd -laSr --tree"  # List directory contents in tree format, sorted by size
+alias cat="bat"  # Use 'bat' as a replacement for 'cat' with syntax highlighting
+alias tree="tree -C"  # Display directory structure in tree format with color
+alias duh="du -h --max-depth=1 | sort -h"  # Display disk usage of current directory, sorted
+
+## Text Processing and Searching
+alias grep="rg"  # Use ripgrep instead of grep for faster searching
+alias f="fzf"  # Fuzzy finder
+alias ff="fzf | xargs bat"  # Fuzzy find and display file contents with bat
+alias frg="rg --color=always --line-number . | fzf --ansi -i"  # Fuzzy ripgrep search
+alias count="wc -l"  # Count lines in input
+
+## Clipboard Operations
+alias ctrlc="xsel --input --clipboard"  # Copy to clipboard
+alias ctrlv="xsel --output --clipboard"  # Paste from clipboard
+
+## Development and Version Control
+alias j="just --unstable"  # Run 'just' command with unstable features
+alias check="r dev pre-commit run"  # Run pre-commit checks
+alias gc="git add . && git commit --amend --no-edit"  # Amend the last commit with all changes
+alias rr="ruff format . && ruff check ."  # Format and lint Python code with ruff (duplicate of lint)
+alias p="pyright"  # Run Pyright for static type checking
+alias r="typer tasks/v2.py run"  # Run tasks using Typer CLI
+alias d="direnv allow"  # Allow direnv in the current directory
+
+## System Information and Monitoring
+alias ports="netstat -tulanp"  # Display network connections and listening ports
+alias mem="free -m -l -t"  # Display memory usage information
+
+## Miscellaneous Utilities
+alias c="clear"  # Clear the terminal screen
+alias s="source ~/.zshrc"  # Reload zsh configuration
+
+## GitHub Copilot
+alias ce="gh copilot explain"  # Explain code using GitHub Copilot
+alias cs="gh copilot suggest"  # Get code suggestions from GitHub Copilot
+
+## Network
+alias ping="ping -c 5"  # Ping with a count of 5 packets
+
+## Docker
+alias dstop='docker stop $(docker ps -q)'  # Stop all running Docker containers
+alias drm='docker rm $(docker ps -aq)'  # Remove all Docker containers
