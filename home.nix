@@ -1,5 +1,11 @@
 { config, pkgs, ... }:
-
+let
+  # Use the old_pkgs when wanting to use a older version of a package
+  old_pkgs = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-23.11.tar.gz") {
+    config = config.nixpkgs.config;
+    overlays = [];
+  };
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -40,7 +46,7 @@
     neovim # highly configurable text editor
     vim # text editor
     jq # command-line JSON processor
-    delta # syntax-highlighting pager for git
+    old_pkgs.delta # syntax-highlighter for git and diff output
 
     # Shell and terminal enhancements
     zsh # extended Bourne shell
@@ -85,7 +91,7 @@
     ffmpeg # audio and video converter
 
     # Fonts
-    pkgs.nerdfonts # patched fonts for developers
+    nerdfonts # patched fonts for developers
   ];
 
   programs.git = {
@@ -201,18 +207,19 @@
           done
       fi
 
+
+      if [ -f .envrc ]; then
+          direnv allow
+      fi
+
       export DIRENV_LOG_FORMAT="$(printf "\033[2mdirenv: %%s\033[0m")"
+
+      eval "$(direnv hook bash)"
 
       _direnv_hook() {
         unalias egrep && eval "$(direnv export zsh 2> >(egrep -v -e '^....direnv: export' >&2))"
       };
 
-      eval "$(direnv hook bash)"
-
-      if [ -f .envrc ]; then
-          direnv allow
-          _direnv_hook
-      fi
     '';
   };
 

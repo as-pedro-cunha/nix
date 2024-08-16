@@ -1,7 +1,10 @@
-## 
+## Basic setup
 sudo apt update && sudo apt upgrade
 sudo apt install curl gnome-shell-extension-manager
 
+
+## Using snap I installed -> Alacritty, VSCode, DBeaver-ce, NordPass, Remmina, Slack
+## Alacritty will be used below, so it needs to be installed.
 
 ## install twingate  (need to be used by sudo, so its not possible to use it with home-managertwingahm
 )
@@ -58,8 +61,8 @@ docker run hello-world
 echo $(which zsh) | sudo tee -a /etc/shells
 chsh -s $(which zsh)
 
-## Set the secrets in
-~/.config/home-manager/.exports.*
+## Set the secrets in ~/.config/home-manager/.exports.*
+
 ### The format should be `export SECRET_NAME=SECRET_VALUE`
 
 ## Finish (in a new shell)
