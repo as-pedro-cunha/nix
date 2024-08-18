@@ -214,10 +214,10 @@ in
 
       export DIRENV_LOG_FORMAT="$(printf "\033[2mdirenv: %%s\033[0m")"
 
-      eval "$(direnv hook bash)"
+      eval "$(direnv hook zsh)"
 
       _direnv_hook() {
-        unalias egrep && eval "$(direnv export zsh 2> >(egrep -v -e '^....direnv: export' >&2))"
+        eval "$(direnv export zsh 2> >(command egrep -v -e '^....direnv: export' >&2))"
       };
 
     '';

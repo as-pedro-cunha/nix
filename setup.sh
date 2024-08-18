@@ -49,6 +49,10 @@ echo "experimental-features = nix-command flakes" > ~/.config/nix/nix.conf
 ## Install flake
 nix run home-manager/master -- init --switch
 
+## Configure nix-direnv
+mkdir -p ~/.config/direnv
+echo 'source ~/.nix-profile/share/nix-direnv/direnvrc' > ~/.config/direnv/direnvrc
+
 ## Set Alacritty as default terminal
 gsettings set org.gnome.desktop.default-applications.terminal exec 'alacritty'
 
