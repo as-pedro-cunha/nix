@@ -1,0 +1,74 @@
+{
+    // "editor.codeActionsOnSave": {
+    //     "source.organizeImports": true
+    // },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".gitignore": true,
+        "Cargo.lock": true,
+        ".dockerignore": true,
+        "**/.direnv": true,
+        "**/.venv": true,
+        "**/.target": true,
+        "**/target": true,
+        "**/.ruff_cache": true,
+        ".ruff_cache": true,
+        "**/.pytest_cache": true,
+        ".pytest_cache": true,
+        "**/__pycache__": true,
+        "__pycache__": true,
+        ".gitmodules": true,
+        ".pre-commit-config.yaml": true,
+        ".envrc": true,
+        ".gitlab-ci.yml": true,
+        "requirements*": true,
+        "install": true,
+        "**/.python-version": true,
+        "**/.terraform*": true
+    },
+    "explorerExclude.backup": {},
+    "peacock.remoteColor": "#13311b",
+    "workbench.editor.enablePreview": true,
+    "python.testing.pytestArgs": [
+        "__pycache__"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true,
+    "editor.rulers": [
+        88, 130
+    ],
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "notebook.formatOnSave.enabled": true,
+    "notebook.codeActionsOnSave": {
+        "notebook.source.fixAll": "explicit",
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "explorer.excludeGitIgnore": false,
+    "window.title": "${activeEditorMedium}${separator}${rootName}",
+    // "rust-analyzer.server.path": "${env:RUST_ANALYZER_PATH}",
+    "rust-analyzer.server.extraEnv": {
+        "RUST_SRC_PATH": "${env:RUST_SRC_PATH}",
+        "LIBCLANG_PATH": "${env:LIBCLANG_PATH}",
+        "PKG_CONFIG_PATH": "${env:PKG_CONFIG_PATH}",
+        "BINDGEN_EXTRA_CLANG_ARGS": "${env:BINDGEN_EXTRA_CLANG_ARGS}"
+    },
+    "nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix",
+    "nixEnvSelector.args": "--impure --arg allowUnfree true",
+    "files.associations": {
+        "justfile*": "just"
+    },
+}

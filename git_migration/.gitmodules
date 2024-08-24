@@ -1,0 +1,6 @@
+[submodule "src/python/aslib_strat"]
+	path = src/python/aslib_strat
+	url = https://github.com/asqcapital/aslib_strat
+[submodule "src/python/aslib_deploy"]
+	path = src/python/aslib_deploy
+	url = https://github.com/asqcapital/aslib_deploy

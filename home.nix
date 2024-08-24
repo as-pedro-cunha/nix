@@ -71,6 +71,7 @@ in
     rye # Python project management tool
     nodejs_22 # JavaScript runtime
     sqlite # SQL database engine
+    git-filter-repo # Manage git (remove large files from history, etc..)
 
     # Text search and manipulation
     ripgrep # fast searching tool
