@@ -65,6 +65,7 @@ in
     twingate # access to asq resourcesc
 
     # Development tools
+    act # Running github actions locally
     nix-direnv # direnv integration for Nix
     direnv # directory-based environment variable manager
     just # command runner for project-specific tasks
@@ -152,6 +153,7 @@ in
     initExtra = ''
       # Additional Zsh configuration
       export NIX_SHELL=True
+      export PATH=$HOME/.local/bin:$PATH
 
       # Load aliases
       if [ -f $HOME/.config/home-manager/.zshrc_aliases ]; then
