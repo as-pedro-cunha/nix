@@ -30,7 +30,7 @@ The recommended way to use this script is to run it line by line. This allows yo
 
 1. Clone this repository or copy it manually to your ~/.config/home-manager/ (if you want home-manager to install your git):
    ```
-   git clone https://github.com/yourusername/ubuntu-dev-setup.git ~/.config/home-manager/
+   git clone https://github.com/pedro-pscunha/nix.git ~/.config/home-manager/
    ```
 
 2. Open the `setup.sh` script in a text editor and review each command.
